@@ -1,0 +1,121 @@
+
+{% load static %}
+<!-- {% include 'partials/user_nav.html' %} -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link 
+        rel="stylesheet" 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+        crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" type="text/css" href="{% static '/css/accounts/dashboard.css' %}"/>
+
+</head>
+<body>
+    <div class="container">
+        <div class="dashboard-container">
+
+            <div class="dashboard-title">
+                <div class="row d-flex justify-content-center mt-3 mb-3">
+                    <h3>Dashboard</h3>
+                </div>
+            </div>
+
+            <div class="dashboard-sub-container shadow-lg">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card text-center">
+                            <div class="card-header">
+                                <h5>Total Profiles</h5>
+                            </div>
+                            <div class="card-body">
+                                <h3>{{ total_profiles }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card text-center">
+                            <div class="card-header">
+                                <h5>Total Cases</h5>
+                            </div>
+                            <div class="card-body">
+                                <h3>{{ total_cases }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-md-5 mt-3">
+                    <div class="dashboard-sub-container shadow-lg">
+
+                        <h5 class="dashboard-title">PROFILES</h5>
+        
+                        <div class="dashboard-table">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Profile</th>
+                                        <th>Email</th>
+                                    </tr>    
+                                </thead>
+                                <!-- <tbody>
+                                    {% for profile in profiles %}
+                                        <tr>
+                                            <td><a href="{% url 'profile' profile.pk %}" class="btn btn-info btn-sm">View</a></td>
+                                            <td>{{ profile.username }}</td>
+                                            <td>{{ profile.email }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody> -->
+                            </table>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-md-7 mt-3">
+                    <div class="dashboard-sub-container shadow-lg">
+
+                        <h5 class="dashboard-title">CASES</h5>
+        
+                        <div class="dashboard-table">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Date Created</th>
+                                        <th>Profile</th>
+                                        <th>Case</th>
+                                        <th>Actions</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+        
+                                <!-- <tbody>
+                                    {% for case in cases %}
+                                        <tr>
+                                            <td>{{ case.date_created }}</td>
+                                            <td>{{ case.profile }}</td>
+                                            <td>{{ case }}</td>
+                                            <td><a href="{% url 'pdf_view' case.pk %}" class="btn btn-info btn-sm" target="_blank">Download</a></td>
+                                            <td><a href="{% url 'update_case' case.pk %}" class="btn btn-info btn-sm">Update</a></td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody> -->
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
