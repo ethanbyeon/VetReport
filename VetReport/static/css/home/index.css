@@ -1,80 +1,123 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Rubik&display=swap');
+/*
+ * Globals
+ */
 
-:root {
-    --Rubik: 'Rubik', sans-serif;
-    --Raleway: 'Raleway', sans-serif;
-    --bmo: #3AAFA9;
-    --mint: #6EF0CB;
-    --pastelgray: #7B7C76;
-    --whitesmoke: #F5F5F5;
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #fff;
 }
 
-html {
-    scroll-behavior: smooth;
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #fff;
+  border: .05rem solid #fff;
 }
 
-*{
-    box-sizing: border-box;
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  height: 100%;
+  background-color: #333;
 }
 
-header, section {
-    overflow-x: hidden;
+body {
+  display: -ms-flexbox;
+  display: flex;
+  color: #fff;
+  text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
 }
 
-header {
-    background: var(--bmo);
+.cover-container {
+  max-width: 42em;
 }
 
-header .navbar-brand {
-    padding-left: 2em;
+
+/*
+ * Header
+ */
+.masthead {
+  margin-bottom: 2rem;
 }
 
-header a {
-    color: var(--whitesmoke);
-    font-family: var(--Rubik);
+.masthead-brand {
+  margin-bottom: 0;
 }
 
-header .nav-item:last-child {
-    padding-right: 10.5em;
+.nav-masthead .nav-link {
+  padding: .25rem 0;
+  font-weight: 700;
+  color: rgba(255, 255, 255, .5);
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
 }
 
-header .nav-item {
-    padding: 0.9em;
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, .25);
 }
 
-header a:hover {
-    color: var(--whitesmoke);
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
 }
 
-header .nav-link:hover {
-    color: black;
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
 }
 
-header .row .col-md-7 {
-    padding: 20vmin 1vmin;
-    padding-bottom: 35vmin;
-    color: var(--whitesmoke);
+@media (min-width: 48em) {
+  .masthead-brand {
+    float: left;
+  }
+  .nav-masthead {
+    float: right;
+  }
 }
 
-header .container .col-md-7 h1 {
-    font-size: 8vmin;
-    font-weight: bold;
-    padding: 0.1em 0em;
-    font-family: var(--Rubik);
+
+/*
+ * Cover
+ */
+.cover {
+  padding: 0 1.5rem;
+}
+.cover .btn-lg {
+  padding: .75rem 1.25rem;
+  font-weight: 700;
 }
 
-header .container .col-md-7 p {
-    padding: 1vmin 5vmin;
-    font-family: var(--Raleway);
+
+/*
+ * Footer
+ */
+.mastfoot {
+  color: rgba(255, 255, 255, .5);
 }
 
-header .row .col-md-5 {
-    padding: 1vmin 1vmin;
-    padding-bottom: 35vmin;
-}
 
-header .row .col-md-5 img {
-    width: 90%;
-    height: auto;
-}
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
