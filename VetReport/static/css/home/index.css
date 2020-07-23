@@ -4,77 +4,138 @@
 :root {
     --Rubik: 'Rubik', sans-serif;
     --Raleway: 'Raleway', sans-serif;
-    --bmo: #3AAFA9;
-    --mint: #6EF0CB;
-    --pastelgray: #7B7C76;
+    --graylink: #557983;
+    --button: #5BBD93;
     --whitesmoke: #F5F5F5;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-*{
+* {
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
 }
 
-header, section {
-    overflow-x: hidden;
+body {
+    font-family: var(--Raleway);
+    background: #EFF5F6;
 }
 
-header {
-    background: var(--bmo);
-}
-
-header .navbar-brand {
-    padding-left: 2em;
-}
-
-header a {
-    color: var(--whitesmoke);
-    font-family: var(--Rubik);
-}
-
-header .nav-item:last-child {
-    padding-right: 10.5em;
-}
-
-header .nav-item {
-    padding: 0.9em;
-}
-
-header a:hover {
-    color: var(--whitesmoke);
-}
-
-header .nav-link:hover {
-    color: black;
-}
-
-header .row .col-md-7 {
-    padding: 20vmin 1vmin;
-    padding-bottom: 35vmin;
-    color: var(--whitesmoke);
-}
-
-header .container .col-md-7 h1 {
-    font-size: 8vmin;
-    font-weight: bold;
-    padding: 0.1em 0em;
-    font-family: var(--Rubik);
-}
-
-header .container .col-md-7 p {
-    padding: 1vmin 5vmin;
+button {
     font-family: var(--Raleway);
 }
 
-header .row .col-md-5 {
-    padding: 1vmin 1vmin;
-    padding-bottom: 35vmin;
+header {
+    display: flex;
+    width: 80%;
+    height: 10vh;
+    margin: auto;
+    align-items: center;
 }
 
-header .row .col-md-5 img {
-    width: 90%;
-    height: auto;
+.logo-container, .nav-links {
+    display: flex;
+}
+.logo-container {
+    flex: 1;
+}
+.logo {
+    font-weight: 400;
+}
+
+nav {
+    flex: 2;
+}
+.nav-links {
+    justify-content: space-around;
+    list-style: none;
+}
+.nav-link {
+    color: var(--graylink);
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.presentation {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    min-height: 80vh;
+    align-items: center;
+}
+.introduction {
+    flex: 2;
+}
+.intro-text h1 {
+    font-size: 44px;
+    font-weight: 500;
+}
+.intro-text p {
+    margin-top: 5px;
+    font-size: 22px;
+    color: var(--graylink);
+}
+.cta {
+    padding: 50px 0px 0px 0px;
+}
+.cta-signup {
+    border: 2px solid var(--button);
+    background: transparent;
+    color: var(--button);
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.cta-login {
+    background: var(--button);
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    color: white;
+    margin: 30px 0px 0px 30px;
+}
+.cover {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    height: 40vh;
+}
+.cover img {
+    height: 100%;
+    animation: drop 1.5s ease;
+}
+
+@keyframes drop {
+    0% {
+        opacity: 0;
+        transform: translateY(-80px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .presentation {
+        flex-direction: column;
+    }
+    .introduction {
+        margin-top: 5vh;
+        text-align: center;
+    }
+    .intro-text h1 {
+        font-size: 30px;
+    }
+    .intro-text p {
+        font-size: 18px;
+    }
+    .cta {
+        padding: 10px 0px 0px 0px;
+    }
+    .cover img {
+        height: 80%;
+    }
 }
