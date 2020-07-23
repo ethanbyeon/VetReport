@@ -6,7 +6,7 @@
     --Raleway: 'Raleway', sans-serif;
     --graylink: #557983;
     --button: #5BBD93;
-    --whitesmoke: #F5F5F5;
+    --whitebkg: #EFF5F6;
 }
 
 * {
@@ -17,7 +17,7 @@
 
 body {
     font-family: var(--Raleway);
-    background: #EFF5F6;
+    background: var(--whitebkg);
 }
 
 button {
@@ -70,17 +70,17 @@ nav {
     font-weight: 500;
 }
 .intro-text p {
+    color: var(--graylink);
     margin-top: 5px;
     font-size: 22px;
-    color: var(--graylink);
 }
 .cta {
     padding: 50px 0px 0px 0px;
 }
 .cta-signup {
-    border: 2px solid var(--button);
     background: transparent;
     color: var(--button);
+    border: 2px solid var(--button);
     width: 150px;
     height: 50px;
     cursor: pointer;
@@ -88,12 +88,12 @@ nav {
 }
 .cta-login {
     background: var(--button);
+    color: whitesmoke;
     width: 150px;
     height: 50px;
     cursor: pointer;
     font-size: 16px;
     border: none;
-    color: white;
     margin: 30px 0px 0px 30px;
 }
 .cover {
@@ -105,6 +105,29 @@ nav {
 .cover img {
     height: 100%;
     animation: drop 1.5s ease;
+}
+
+footer {
+    background: var(--graylink);
+}
+.footer-container {
+    color: whitesmoke;
+    font-size: 12px;
+}
+.f-text {
+    display: flex;
+    height: 5vh;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+.f-text h2 {
+    margin-top: 15px;
+}
+.f-text a {
+    color: var(--button);
+    list-style: none;
+    text-decoration: none;
 }
 
 @keyframes drop {
@@ -131,11 +154,18 @@ nav {
     }
     .intro-text p {
         font-size: 18px;
+        padding: 5px 0px 5px 0px;
     }
     .cta {
-        padding: 10px 0px 0px 0px;
+        padding: 10px 0px 10px 0px;
+    }
+    .cta-login {
+        margin: 20px 0px 0px 0px;
+    }
+    .cover {
+        margin: 20px 0px 20px 0px;
     }
     .cover img {
-        height: 80%;
+        height: 40vh;
     }
 }

@@ -8,26 +8,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Vet Report</title>
 
-        <!-- <link 
-            rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-            crossorigin="anonymous"
-        /> -->
-
         <link href="{% static '/css/home/index.css' %}" rel="stylesheet"/>
 
     </head>
     <body>
         <header>
             <div class="logo-container">
-                <h4 class="logo">Vet Report</h4>
+                <h2 class="logo">Vet Report</h2>
             </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a class="nav-link" href="#">FEATURES</a></li>
-                    <li><a class="nav-link" href="#">CONTACT</a></li>
-                </ul>
-            </nav>
         </header>
 
         <main>
@@ -49,44 +37,19 @@
                 </div>
             </section>
         </main>
-        <!-- <header>
-            <div class="container-fluid p-0">
-                <nav class="navbar navbar-expand-lg">
-                    <a class="navbar-brand" href="{% if request.user.is_authenticated %} {% url 'user_page' %} {% endif %}">Vet Report</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                            aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon text-light"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="home-navbar">
-                        <div class="mr-auto"></div>
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#features">FEATURES</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#contact">CONTACT</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-            <div class="container text-left">
-                <div class="row">
-                    <div class="col-md-7 col-sm-12">
-                        <h1>Record All Your Cases Here</h1>
-                        <p class="lead pb-4 px-0">Vet Report helps you store and format all your case reports in the easiest way possible.</p>
-                        <a class="btn btn-info mr-5 px-5 py-2" href="#">Sign Up Now</a>
-                        <a class="btn btn-info px-5 py-2" href="#">Login</a>
-                    </div>
-                    <div class="col-md-5 col-sm-12">
-                        <img src="{% static 'images/clipboard.png' %}" alt="Clipboard"> 
-                    </div>
+
+        <footer>
+            <div class="footer-container">
+                <div class="f-text">
+                    <h2>vet.report.help@gmail.com</h2>
+                </div>
+                <div class="f-text">
+                    <p>
+                        Icons made by <a href="http://www.freepik.com/" title="Freepik">Freepik</a> 
+                        from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+                    </p>
                 </div>
             </div>
-        </header>
-        <footer>
-            Icons made by <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
         </footer>
-    </body> -->
+    </body>
 </html>
