@@ -111,7 +111,7 @@ footer {
     background: var(--graylink);
 }
 .footer-container {
-    color: whitesmoke;
+    color: #DEECF0;
     font-size: 12px;
 }
 .f-text {
@@ -123,6 +123,9 @@ footer {
 }
 .f-text h2 {
     margin-top: 15px;
+}
+.f-text p {
+    color: #7DA2B0;
 }
 .f-text a {
     color: var(--button);
