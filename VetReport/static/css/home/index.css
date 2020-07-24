@@ -6,6 +6,7 @@
     --Raleway: 'Raleway', sans-serif;
     --graylink: #557983;
     --button: #5BBD93;
+    --mango: #FB9927;
     --whitebkg: #EFF5F6;
 }
 
@@ -85,6 +86,7 @@ nav {
     height: 50px;
     cursor: pointer;
     font-size: 16px;
+    transition:all 0.3s ease;
 }
 .cta-login {
     background: var(--button);
@@ -95,7 +97,17 @@ nav {
     font-size: 16px;
     border: none;
     margin: 30px 0px 0px 30px;
+    transition:all 0.3s ease;
 }
+.cta-signup:hover {
+    background: var(--mango);
+    border: none;
+    color: whitesmoke;
+}
+.cta-login:hover {
+    background: var(--mango);
+}
+
 .cover {
     flex: 1;
     display: flex;
