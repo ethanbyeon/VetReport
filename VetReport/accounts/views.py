@@ -8,3 +8,6 @@ def home(request):
 
 def dashboard(request):
     return render(request, 'accounts/dashboard.html')
+
+def login(request):
+    return render(request, 'accounts/login.html')
