@@ -51,7 +51,7 @@ a {
 }
 
 form {
-    background-color: #ffffff;
+    background: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
