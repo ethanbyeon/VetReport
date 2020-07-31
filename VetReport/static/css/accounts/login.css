@@ -61,6 +61,11 @@ form {
     text-align: center;
 }
 
+.sign-in-container h1, .sign-up-container h1 {
+    margin: 20px 0;
+}
+
+
 .sign-in-container {
     left: 0;
     width: 50%;
@@ -86,7 +91,11 @@ input {
     border: none;
     padding: 12px 15px;
     margin: 8px 0;
-    width: 100%;
+    width: 50%;
+}
+
+.sign-up-container button {
+    margin: 20px 0;
 }
 
 button {
