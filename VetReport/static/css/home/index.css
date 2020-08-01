@@ -35,9 +35,11 @@ header {
 .logo-container, .nav-links {
     display: flex;
 }
+
 .logo-container {
     flex: 1;
 }
+
 .logo {
     font-weight: 400;
 }
@@ -45,10 +47,12 @@ header {
 nav {
     flex: 2;
 }
+
 .nav-links {
     justify-content: space-around;
     list-style: none;
 }
+
 .nav-link {
     color: var(--graylink);
     font-size: 18px;
@@ -62,21 +66,26 @@ nav {
     min-height: 80vh;
     align-items: center;
 }
+
 .introduction {
     flex: 2;
 }
+
 .intro-text h1 {
     font-size: 44px;
     font-weight: 500;
 }
+
 .intro-text p {
     color: var(--graylink);
     margin-top: 5px;
     font-size: 22px;
 }
+
 .cta {
     padding: 50px 0px 0px 0px;
 }
+
 .cta-signup {
     background: transparent;
     color: var(--button);
@@ -87,6 +96,7 @@ nav {
     font-size: 16px;
     transition:all 0.3s ease;
 }
+
 .cta-login {
     background: var(--button);
     color: whitesmoke;
@@ -95,14 +105,15 @@ nav {
     cursor: pointer;
     font-size: 16px;
     border: none;
-    margin: 30px 0px 0px 30px;
     transition:all 0.3s ease;
 }
+
 .cta-signup:hover {
     background: var(--mango);
     border: none;
     color: whitesmoke;
 }
+
 .cta-login:hover {
     background: var(--mango);
 }
@@ -113,6 +124,7 @@ nav {
     justify-content: center;
     height: 40vh;
 }
+
 .cover img {
     height: 100%;
     animation: drop 1.5s ease;
@@ -121,10 +133,12 @@ nav {
 footer {
     background: var(--graylink);
 }
+
 .footer-container {
     color: #DEECF0;
     font-size: 12px;
 }
+
 .f-text {
     display: flex;
     height: 5vh;
@@ -132,12 +146,15 @@ footer {
     align-items: center;
     justify-content: center;
 }
+
 .f-text h2 {
     margin-top: 15px;
 }
+
 .f-text p {
     color: #7DA2B0;
 }
+
 .f-text a {
     color: var(--button);
     list-style: none;
