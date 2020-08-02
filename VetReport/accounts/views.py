@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-# Create your views here.
+from .models import *
 
 def home(request):
     return render(request, 'home/index.html')
@@ -10,4 +10,9 @@ def login(request):
     return render(request, 'accounts/login.html')
 
 def dashboard(request):
-    return render(request, 'accounts/dashboard.html')
+
+    cases = Case.objects.all()
+    clients = Client.objects.all()
+
+    context = {'cases': cases, 'clients': clients}
+    return render(request, 'accounts/dashboard.html', context)
