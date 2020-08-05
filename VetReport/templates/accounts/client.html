@@ -25,7 +25,7 @@
         />
 
         <!-- Custom styles for this template -->
-        <link href="{% static '/css/accounts/dashboard.css' %}" rel="stylesheet"/>
+        <link href="{% static '/css/accounts/client.css' %}" rel="stylesheet"/>
 
     </head>
     <body>
@@ -43,24 +43,6 @@
         
         <div class="container-fluid">
             <div class="row">
-                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-                    <div class="sidebar-sticky pt-3">
-                        <ul class="nav flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                <span data-feather="file"></span>
-                                Clients
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#case-reports">
-                                <span data-feather="shopping-cart"></span>
-                                Case Reports
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
 
                 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -77,40 +59,16 @@
                         </div>
                     </div>
 
-                    <h2>Clients</h2>
+                    <h2>Case Reports</h2>
                     <div class="table-responsive">
                         <table class="table table-striped table-sm">
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Client</th>
-                                <th>Email</th>
-                                <th>Date Created</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {% for client in clients %}
-                                <tr>
-                                    <td>{{ client.id }}</td>
-                                    <td>{{ client.name }}</td>
-                                    <td>{{ client.email }}</td>
-                                    <td>{{ client.date_created }}</td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                        </table>
-                    </div>
-
-                    <h2 id="case-reports">Case Reports</h2>
-                    <div class="table-responsive">
-                        <table class="table table-striped table-sm">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Case Report</th>
-                                <th>Client</th>
-                                <th>Email</th>
-                                <th>Date Created</th>
+                                <th>Date of Case</th>
+                                <th>Name of Animal</th>
+                                <th>Clinician</th>
+                                <th>Key Words</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -118,10 +76,11 @@
                             {% for case in cases %}
                                 <tr>
                                     <td>{{ case.id }}</td>
-                                    <td>{{ case }}</td>
-                                    <td>{{ case.client }}</td>
-                                    <td>{{ case.client.email }}</td>
-                                    <td>{{ case.date_created }}</td>
+                                    <td>{{ case.date_of_case }}</td>
+                                    <td>{{ case.role }}</td>
+                                    <td>{{ case.animal_name }}</td>
+                                    <td>{{ case.clinician }}</td>
+                                    <td>{{ case.key_words }}</td>
                                     <td>
                                         <a href="#", class="btn btn-success btn-sm mr-3">Update</a>
                                         <a href="#", class="btn btn-info btn-sm">Download</a>

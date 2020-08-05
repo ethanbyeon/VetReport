@@ -9,6 +9,9 @@ def home(request):
 def login(request):
     return render(request, 'accounts/login.html')
 
+def userPage(request):
+    return render(request, 'accounts/client.html')
+
 def dashboard(request):
 
     cases = Case.objects.all()
