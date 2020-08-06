@@ -6,11 +6,18 @@ from .models import *
 def home(request):
     return render(request, 'home/index.html')
 
+
 def login(request):
     return render(request, 'accounts/login.html')
 
+
 def userPage(request):
     return render(request, 'accounts/client.html')
+
+
+def createCase(request):
+    return render(request, 'accounts/case.html')
+
 
 def dashboard(request):
 

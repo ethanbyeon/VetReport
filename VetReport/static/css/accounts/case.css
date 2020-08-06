@@ -1,0 +1,65 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Rubik&display=swap');
+
+:root {
+    --Raleway: 'Raleway', sans-serif;
+    --graylink: #557983;
+    --button: #5BBD93;
+    --mango: #FB9927;
+    --whitebkg: #EFF5F6;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: var(--Raleway);
+    background: var(--graylink);
+}
+
+.asteriskField {
+    display: none;
+}
+
+#files-label, #pictures-label {
+    height: auto;
+    border-color: #D3E7E6;
+    background: #D3E7E6;
+}
+
+label.custom-file-label::after {
+    height: auto;
+    border-color: #D3E7E6;
+    color: whitesmoke;
+    background: #3AAFA9;
+}
+
+.form-title, .upload-button, label {
+    margin: 10px 0;
+}
+
+.form-container {
+    height: auto;
+    width: 1000px;
+    margin: 50px 0;
+    padding: 30px 30px;
+    border-radius: 5px;
+    background: #DEF2F1;
+}
+
+.form-control, input[type="text date"], textarea {
+    border-color: #D3E7E6;
+    background: #D3E7E6;
+}
+
+.form-control:focus, .form-control:valid  {
+    border-color: #D3E7E6;
+    background: #D3E7E6;
+}
+
+.upload-button {
+    width: 100%;
+    display: block;
+    color: whitesmoke;
+    background: var(--button);
+}

@@ -1,0 +1,102 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Vet Report | Create Case</title>
+
+        <link 
+            rel="stylesheet" 
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+            crossorigin="anonymous"
+        />
+
+        <link rel="stylesheet" type="text/css" href="{% static '/css/accounts/case.css' %}"/>
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                <div class="form-container shadow-lg">
+                    
+                    <div class="form-title">
+                        <div class="row d-flex justify-content-center">
+                            <h3>Case</h3>
+                        </div>
+                    </div>
+
+                    <div class="form-area">
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="form-row">
+                                <div class="form-group col-md-2 mb-0">
+                                    
+                                </div>
+                                <div class="form-group col-md-2 mb-0">
+                                    
+                                </div>
+                                <div class="form-group col-md-8 mb-0">
+                                    
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4 mb-0">
+                                    
+                                </div>
+                                <div class="form-group col-md-3 mb-0">
+                                    
+                                </div>
+                                <div class="form-group col-md-5 mb-0">
+                                    
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4 mb-0">
+                                    
+                                </div>
+                                <div class="form-group col-md-4 mb-0">
+                                    
+                                </div>
+                                <div class="form-group col-md-4 mb-0">
+                                    
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-12 mb-0">
+                                    
+                                </div>
+                                <div class="form-group col-md-12 mb-0">
+                                    
+                                </div>
+                                <div class="form-group col-md-12 mb-0">
+                                    
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-12 mt-4">
+                                    <label class="mb-0">Files</label>
+                                    <div id="custom-file" class="custom-file mb-2">
+                                        <input type="file" id="files" class="custom-file-input" multiple />
+                                        <label id="files-label" class="custom-file-label">Choose Files</label>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12 mt-5">
+                                    <label class="mb-0">Images</label>
+                                    <div class="custom-file mb-2">
+                                        <input type="file" id="files" class="custom-file-input" multiple />
+                                        <label id="pictures-label" class="custom-file-label">Choose Images</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn upload-button mt-5">Upload</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
