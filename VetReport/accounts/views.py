@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from .models import *
+from .forms import *
 
 def home(request):
     return render(request, 'home/index.html')
@@ -16,7 +17,20 @@ def userPage(request):
 
 
 def createCase(request):
-    return render(request, 'accounts/case.html')
+    form = CaseForm()
+    
+    if request.method == 'POST':
+        form = CaseForm(request.POST, request.FILES)
+        if form.is_valid():
+            case = form.save(commit=False)
+            case.profile = request.user.profile
+
+            case.save()
+
+            return redirect('user_page')
+    
+    context = {'form': form}
+    return render(request, 'accounts/case.html', context)
 
 
 def dashboard(request):

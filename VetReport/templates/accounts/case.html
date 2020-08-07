@@ -1,5 +1,6 @@
 
 {% load static %}
+{% load crispy_forms_tags %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,46 +35,46 @@
                             {% csrf_token %}
                             <div class="form-row">
                                 <div class="form-group col-md-2 mb-0">
-                                    
+                                    {{ form.date_of_case|as_crispy_field }}
                                 </div>
                                 <div class="form-group col-md-2 mb-0">
-                                    
+                                    {{ form.role|as_crispy_field }}
                                 </div>
                                 <div class="form-group col-md-8 mb-0">
-                                    
+                                    {{ form.key_words|as_crispy_field }}
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-4 mb-0">
-                                    
+                                    {{ form.clinician|as_crispy_field }}
                                 </div>
                                 <div class="form-group col-md-3 mb-0">
-                                    
+                                    {{ form.veterinary|as_crispy_field }}
                                 </div>
                                 <div class="form-group col-md-5 mb-0">
-                                    
+                                    {{ form.diagnosis|as_crispy_field }}
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-4 mb-0">
-                                    
+                                    {{ form.animal_name|as_crispy_field }}
                                 </div>
                                 <div class="form-group col-md-4 mb-0">
-                                    
+                                    {{ form.signalment|as_crispy_field }}
                                 </div>
                                 <div class="form-group col-md-4 mb-0">
-                                    
+                                    {{ form.complaint|as_crispy_field }}
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-12 mb-0">
-                                    
+                                    {{ form.description|as_crispy_field }}
                                 </div>
                                 <div class="form-group col-md-12 mb-0">
-                                    
+                                    {{ form.summary|as_crispy_field }}
                                 </div>
                                 <div class="form-group col-md-12 mb-0">
-                                    
+                                    {{ form.resources|as_crispy_field }}
                                 </div>
                             </div>
                             <div class="form-row">
