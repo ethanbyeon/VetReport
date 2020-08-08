@@ -31,16 +31,16 @@ label.custom-file-label::after {
     height: auto;
     border-color: #D3E7E6;
     color: whitesmoke;
-    background: #3AAFA9;
+    background: var(--button);
 }
 
 .form-title, .upload-button, label {
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 .form-container {
     height: auto;
-    width: 1000px;
+    width: 900px;
     margin: 50px 0;
     padding: 30px 30px;
     border-radius: 5px;

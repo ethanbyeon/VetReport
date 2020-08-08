@@ -14,6 +14,6 @@ class CaseForm(forms.ModelForm):
     class Meta:
         model = Case
         fields = ('date_of_case', 'role', 'clinician',
-                    'veterinary', 'key_words', 'diagnosis', 'animal_name',
+                    'veterinary_clinic', 'key_words', 'diagnosis', 'name_of_animal',
                     'signalment', 'complaint', 'description', 'summary',
                     'resources', 'files', 'pictures')

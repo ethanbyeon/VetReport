@@ -24,9 +24,9 @@
             <div class="d-flex justify-content-center">
                 <div class="form-container shadow-lg">
                     
-                    <div class="form-title">
+                    <div class="form-title mt-3 mb-3">
                         <div class="row d-flex justify-content-center">
-                            <h3>Case</h3>
+                            <h3>Case Report</h3>
                         </div>
                     </div>
 
@@ -37,36 +37,38 @@
                                 <div class="form-group col-md-2 mb-0">
                                     {{ form.date_of_case|as_crispy_field }}
                                 </div>
-                                <div class="form-group col-md-2 mb-0">
+                                <div class="form-group col-md-3 mb-0">
                                     {{ form.role|as_crispy_field }}
                                 </div>
-                                <div class="form-group col-md-8 mb-0">
+                                <div class="form-group col-md-7 mb-0">
+                                    {{ form.clinician|as_crispy_field }}
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6 mb-0">
+                                    {{ form.veterinary_clinic|as_crispy_field }}
+                                </div>
+                                <div class="form-group col-md-6 mb-0">
                                     {{ form.key_words|as_crispy_field }}
                                 </div>
                             </div>
                             <div class="form-row">
-                                <div class="form-group col-md-4 mb-0">
-                                    {{ form.clinician|as_crispy_field }}
-                                </div>
-                                <div class="form-group col-md-3 mb-0">
-                                    {{ form.veterinary|as_crispy_field }}
-                                </div>
-                                <div class="form-group col-md-5 mb-0">
+                                <div class="form-group col-md-12 mb-0">
                                     {{ form.diagnosis|as_crispy_field }}
                                 </div>
                             </div>
                             <div class="form-row">
-                                <div class="form-group col-md-4 mb-0">
-                                    {{ form.animal_name|as_crispy_field }}
+                                <div class="form-group col-md-2 mb-0">
+                                    {{ form.name_of_animal|as_crispy_field }}
                                 </div>
-                                <div class="form-group col-md-4 mb-0">
+                                <div class="form-group col-md-5 mb-0">
                                     {{ form.signalment|as_crispy_field }}
                                 </div>
-                                <div class="form-group col-md-4 mb-0">
+                                <div class="form-group col-md-5 mb-0">
                                     {{ form.complaint|as_crispy_field }}
                                 </div>
                             </div>
-                            <div class="form-row">
+                            <div class="form-row mt-3">
                                 <div class="form-group col-md-12 mb-0">
                                     {{ form.description|as_crispy_field }}
                                 </div>
@@ -85,7 +87,7 @@
                                         <label id="files-label" class="custom-file-label">Choose Files</label>
                                     </div>
                                 </div>
-                                <div class="form-group col-md-12 mt-5">
+                                <div class="form-group col-md-12">
                                     <label class="mb-0">Images</label>
                                     <div class="custom-file mb-2">
                                         <input type="file" id="files" class="custom-file-input" multiple />
