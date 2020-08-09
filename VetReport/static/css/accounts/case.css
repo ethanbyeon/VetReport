@@ -34,6 +34,13 @@ label.custom-file-label::after {
     background: var(--button);
 }
 
+.form-top {
+    padding: 20px 0 10px 0;
+    border-radius: 5px 5px 0px 0px;
+    background: var(--button);
+    color: whitesmoke;
+}
+
 .form-title, .upload-button, label {
     margin: 5px 0;
 }
@@ -42,9 +49,12 @@ label.custom-file-label::after {
     height: auto;
     width: 900px;
     margin: 50px 0;
-    padding: 30px 30px;
     border-radius: 5px;
-    background: #DEF2F1;
+    background: var(--whitebkg);
+}
+
+.form-area {
+    padding: 0px 30px 30px 30px;
 }
 
 .form-control, input[type="text date"], textarea {
