@@ -7,6 +7,7 @@
     --button: #5BBD93;
     --mango: #FB9927;
     --whitebkg: #EFF5F6;
+    --formbkg: #D3E7E6;
 }
 
 body {
@@ -23,19 +24,19 @@ body {
 
 #files-label, #pictures-label {
     height: auto;
-    border-color: #D3E7E6;
-    background: #D3E7E6;
+    border-color: var(--formbkg);;
+    background: var(--formbkg);;
 }
 
 label.custom-file-label::after {
     height: auto;
-    border-color: #D3E7E6;
+    border-color: var(--formbkg);;
     color: whitesmoke;
     background: var(--button);
 }
 
 .form-top {
-    padding: 20px 0 10px 0;
+    padding: 30px 0 20px 0;
     border-radius: 5px 5px 0px 0px;
     background: var(--button);
     color: whitesmoke;
@@ -58,13 +59,13 @@ label.custom-file-label::after {
 }
 
 .form-control, input[type="text date"], textarea {
-    border-color: #D3E7E6;
-    background: #D3E7E6;
+    border-color: var(--formbkg);;
+    background: var(--formbkg);;
 }
 
 .form-control:focus, .form-control:valid  {
-    border-color: #D3E7E6;
-    background: #D3E7E6;
+    border-color: var(--formbkg);;
+    background: var(--formbkg);;
 }
 
 .upload-button {
@@ -72,4 +73,9 @@ label.custom-file-label::after {
     display: block;
     color: whitesmoke;
     background: var(--button);
+}
+
+.upload-button:hover {
+    color: whitesmoke;
+    background: var(--mango);
 }

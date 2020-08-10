@@ -118,12 +118,13 @@
                             {% for case in cases %}
                                 <tr>
                                     <td>{{ case.id }}</td>
-                                    <td>{{ case }}</td>
+                                    <td>{{ case.name_of_animal }}</td>
                                     <td>{{ case.client }}</td>
                                     <td>{{ case.client.email }}</td>
                                     <td>{{ case.date_created }}</td>
                                     <td>
-                                        <a href="#", class="btn btn-success btn-sm mr-3">Update</a>
+                                        <a href="{% url 'update_case' case.id %}", class="btn btn-success btn-sm mr-3">Update</a>
+                                        <a href="{% url 'delete_case' case.id %}", class="btn btn-danger btn-sm mr-3">Delete</a>
                                         <a href="#", class="btn btn-info btn-sm">Download</a>
                                     </td>
                                 </tr>

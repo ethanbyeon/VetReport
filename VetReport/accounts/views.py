@@ -33,6 +33,29 @@ def createCase(request):
     return render(request, 'accounts/case.html', context)
 
 
+def updateCase(request, pk):
+
+    case = Case.objects.get(id=pk)
+    form = CaseForm(request.POST or None, request.FILES or None, instance=case)
+
+    if request.method == 'POST':
+        form = CaseForm(request.POST or None, request.FILES or None, instance=case)
+        if form.is_valid():
+            form.save()
+            return redirect('user_page')
+
+    context = {'form': form}
+    return render(request, 'accounts/case.html', context)
+
+
+def deleteCase(request, pk):
+
+    if request.method == 'POST':
+        case = Case.objects.get(pk=pk)
+        case.delete()
+        return redirect('user_page')
+
+
 def dashboard(request):
 
     cases = Case.objects.all()
