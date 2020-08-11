@@ -50,10 +50,14 @@ def updateCase(request, pk):
 
 def deleteCase(request, pk):
 
+    case = Case.objects.get(id=pk)
+
     if request.method == 'POST':
-        case = Case.objects.get(pk=pk)
         case.delete()
         return redirect('user_page')
+    
+    context = {'case': case}
+    return render(request, 'accounts/delete.html', context)
 
 
 def dashboard(request):
