@@ -1,0 +1,28 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+        <title>{% block title %} Vet Report - Case Reports Made Easy {% endblock%}</title>
+        <meta name="description" content="{% block description %} Vet Report is a web-application that stores, formats, and organizes case reports.{% endblock %}">
+        <meta name="keywords" content="vet, veterinary, case report, case, report">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        {% block extra_head_meta %}{% endblock %}
+
+        {% block links %}{% endblock %}
+        
+        {% block custom_css %}{% endblock %}
+        {% block custom_js %}{% endblock %}
+
+    </head>
+    <body>
+
+        {% block content %}
+
+        {% endblock %}
+
+    </body>
+</html>

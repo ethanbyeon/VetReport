@@ -1,145 +1,151 @@
 
+{% extends 'global/base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-        <meta name="generator" content="Jekyll v4.0.1">
-        <title>Dashboard</title>
+{% block title %} <title>Vet Report | Dashboard</title> {% endblock %}
 
-        <link 
-            rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-            crossorigin="anonymous"
-        />
+{% block extra_head_meta %}
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+{% endblock %}
 
-        <!-- Bootstrap core CSS -->
-        <link 
-            rel="stylesheet"
-            href="{% static '/css/bootstrap.min.css' %}"
-            type="text/css"
-        />
+{% block links %}
 
-        <!-- Custom styles for this template -->
-        <link href="{% static '/css/accounts/dashboard.css' %}" rel="stylesheet"/>
+    <link 
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+        crossorigin="anonymous"
+    />
 
-    </head>
-    <body>
-        <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-            <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="{% url 'home' %}">Vet Report</a>
-            <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span></button>
-            <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
-            <ul class="navbar-nav px-3">
-                <li class="nav-item text-nowrap">
-                    <a class="nav-link" href="#">Sign out</a>
-                </li>
-            </ul>
-        </nav>
-        
-        <div class="container-fluid">
-            <div class="row">
-                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-                    <div class="sidebar-sticky pt-3">
-                        <ul class="nav flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                <span data-feather="file"></span>
-                                Clients
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#case-reports">
-                                <span data-feather="shopping-cart"></span>
-                                Case Reports
-                                </a>
-                            </li>
-                        </ul>
+    <link 
+        rel="stylesheet"
+        href="{% static '/css/bootstrap.min.css' %}"
+        type="text/css"
+    />
+
+{% endblock %}
+
+{% block custom_css %} <link href="{% static '/css/accounts/dashboard.css' %}" rel="stylesheet"/> {% endblock %}
+{% block custom_js %}
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+    <script src="/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+
+    <script src="{% static '/js/accounts/dashboard.js' %}"></script>
+    
+{% endblock %}
+
+{% block content %}
+
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="{% url 'home' %}">Vet Report</a>
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span></button>
+        <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                <a class="nav-link" href="#">Sign out</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                <div class="sidebar-sticky pt-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                            <span data-feather="file"></span>
+                            Clients
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#case-reports">
+                            <span data-feather="shopping-cart"></span>
+                            Case Reports
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Dashboard</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                    <div class="btn-group mr-2">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
                     </div>
-                </nav>
-
-                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                        <h1 class="h2">Dashboard</h1>
-                        <div class="btn-toolbar mb-2 mb-md-0">
-                        <div class="btn-group mr-2">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-                        </div>
-                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                            <span data-feather="calendar"></span>
-                            This week
-                        </button>
-                        </div>
+                    <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                        <span data-feather="calendar"></span>
+                        This week
+                    </button>
                     </div>
+                </div>
 
-                    <h2>Clients</h2>
-                    <div class="table-responsive">
-                        <table class="table table-striped table-sm">
-                        <thead>
+                <h2>Clients</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Client</th>
+                            <th>Email</th>
+                            <th>Date Created</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for client in clients %}
                             <tr>
-                                <th>#</th>
-                                <th>Client</th>
-                                <th>Email</th>
-                                <th>Date Created</th>
+                                <td>{{ client.id }}</td>
+                                <td>{{ client.name }}</td>
+                                <td>{{ client.email }}</td>
+                                <td>{{ client.date_created }}</td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            {% for client in clients %}
-                                <tr>
-                                    <td>{{ client.id }}</td>
-                                    <td>{{ client.name }}</td>
-                                    <td>{{ client.email }}</td>
-                                    <td>{{ client.date_created }}</td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                        </table>
-                    </div>
+                        {% endfor %}
+                    </tbody>
+                    </table>
+                </div>
 
-                    <h2 id="case-reports">Case Reports</h2>
-                    <div class="table-responsive">
-                        <table class="table table-striped table-sm">
-                        <thead>
+                <h2 id="case-reports">Case Reports</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Case Report</th>
+                            <th>Client</th>
+                            <th>Email</th>
+                            <th>Date Created</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for case in cases %}
                             <tr>
-                                <th>#</th>
-                                <th>Case Report</th>
-                                <th>Client</th>
-                                <th>Email</th>
-                                <th>Date Created</th>
-                                <th>Actions</th>
+                                <td>{{ case.id }}</td>
+                                <td>{{ case.name_of_animal }}</td>
+                                <td>{{ case.client }}</td>
+                                <td>{{ case.client.email }}</td>
+                                <td>{{ case.date_created }}</td>
+                                <td>
+                                    <a href="{% url 'update_case' case.id %}" class="btn btn-success btn-sm mr-3">Update</a>
+                                    <a href="{% url 'delete_case' case.id %}" class="btn btn-danger btn-sm mr-3">Delete</a>
+                                    <a href="#" class="btn btn-info btn-sm">Download</a>
+                                </td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            {% for case in cases %}
-                                <tr>
-                                    <td>{{ case.id }}</td>
-                                    <td>{{ case.name_of_animal }}</td>
-                                    <td>{{ case.client }}</td>
-                                    <td>{{ case.client.email }}</td>
-                                    <td>{{ case.date_created }}</td>
-                                    <td>
-                                        <a href="{% url 'update_case' case.id %}", class="btn btn-success btn-sm mr-3">Update</a>
-                                        <a href="{% url 'delete_case' case.id %}", class="btn btn-danger btn-sm mr-3">Delete</a>
-                                        <a href="#", class="btn btn-info btn-sm">Download</a>
-                                    </td>
-                                </tr>
-                            {% endfor %}
-                        </tbody>
-                        </table>
-                    </div>
-                </main>
-            </div>
+                        {% endfor %}
+                    </tbody>
+                    </table>
+                </div>
+            </main>
         </div>
+    </div>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script>window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/4.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
-        <script src="{% static '/js/accounts/dashboard.js' %}"></script>
-    </body>
-</html>
+{% endblock %}

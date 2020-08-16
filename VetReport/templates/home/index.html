@@ -1,56 +1,50 @@
 
+{% extends 'global/base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Vet Report</title>
+{% block custom_css %} <link href="{% static '/css/home/index.css' %}" rel="stylesheet"/> {% endblock %}
 
-        <link href="{% static '/css/home/index.css' %}" rel="stylesheet"/>
+{% block content %}
 
-    </head>
-    <body>
-        <header>
-            <div class="logo-container">
-                <h2 class="logo">Vet Report</h2>
-            </div>
-        </header>
+    <header>
+        <div class="logo-container">
+            <h2 class="logo">Vet Report</h2>
+        </div>
+    </header>
 
-        <main>
-            <section class="presentation">
-                <div class="introduction">
-                    <div class="intro-text">
-                        <h1>Clean and Simple</h1>
-                        <p>
-                            Store and format all your case reports in the easiest way possible.
-                        </p>
-                    </div>
-                    <div class="cta">
-                        <form action="{% url 'login' %}">
-                            <button class="cta-login" >Get Started</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="cover">
-                    <img src="{% static '/images/clipboard.png' %}" alt="Clipboard" />
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <div class="footer-container">
-                <div class="f-text">
-                    <h2>vet.report.help@gmail.com</h2>
-                </div>
-                <div class="f-text">
+    <main>
+        <section class="presentation">
+            <div class="introduction">
+                <div class="intro-text">
+                    <h1>Clean and Simple</h1>
                     <p>
-                        Icons made by <a href="http://www.freepik.com/" title="Freepik">Freepik</a> 
-                        from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+                        Store and format all your case reports in the easiest way possible.
                     </p>
                 </div>
+                <div class="cta">
+                    <form action="{% url 'login' %}">
+                        <button class="cta-login" >Get Started</button>
+                    </form>
+                </div>
             </div>
-        </footer>
-    </body>
-</html>
+            <div class="cover">
+                <img src="{% static '/images/clipboard.png' %}" alt="Clipboard" />
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="f-text">
+                <h2>vet.report.help@gmail.com</h2>
+            </div>
+            <div class="f-text">
+                <p>
+                    Icons made by <a href="http://www.freepik.com/" title="Freepik">Freepik</a> 
+                    from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+{% endblock %}
