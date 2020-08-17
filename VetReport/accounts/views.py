@@ -57,7 +57,7 @@ def deleteCase(request, pk):
         return redirect('user_page')
     
     context = {'case': case}
-    return render(request, 'accounts/delete.html', context)
+    return render(request, 'accounts/client.html', context)
 
 
 def dashboard(request):
