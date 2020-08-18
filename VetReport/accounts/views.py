@@ -65,5 +65,7 @@ def dashboard(request):
     cases = Case.objects.all()
     clients = Client.objects.all()
 
-    context = {'cases': cases, 'clients': clients}
+    caseFilter = CaseFilter()
+
+    context = {'cases': cases, 'clients': clients, 'caseFilter':caseFilter}
     return render(request, 'accounts/dashboard.html', context)
