@@ -3,6 +3,7 @@ from django.http import HttpResponse
 
 from .models import *
 from .forms import *
+from .filters import *
 
 def home(request):
     return render(request, 'home/index.html')
@@ -65,7 +66,8 @@ def dashboard(request):
     cases = Case.objects.all()
     clients = Client.objects.all()
 
-    caseFilter = CaseFilter()
+    caseFilter = CaseFilter(request.GET, queryset=cases)
+    cases = caseFilter.qs
 
     context = {'cases': cases, 'clients': clients, 'caseFilter':caseFilter}
     return render(request, 'accounts/dashboard.html', context)
