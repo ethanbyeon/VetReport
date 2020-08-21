@@ -5,8 +5,17 @@ from .models import *
 
 class CaseFilter(django_filters.FilterSet):
 
-    key_words = CharFilter(field_name='key_words', lookup_expr='icontains')
+    CHOICES = (
+        ('ascending', 'Ascending'),
+        ('descending', 'Descending')
+    )
+
+    ordering = django_filters.ChoiceFilter(label='Ordering', choices=CHOICES, method='filter_by_ordering')
 
     class Meta:
         model = Case
-        fields = ('role', 'clinician', 'name_of_animal')
+        fields = ('role', 'clinician', 'name_of_animal', 'key_words')
+
+    def filter_by_ordering(self, queryset, name, value):
+        expression = 'date_created' if value == 'ascending' else '-date_created'
+        return queryset.order_by(expression)

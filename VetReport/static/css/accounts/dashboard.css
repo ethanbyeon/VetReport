@@ -121,3 +121,25 @@ body {
     font-size: 3.5rem;
     }
 }
+
+/*
+    * Filter
+*/
+
+label[for="id_name_of_animal"] {
+    font-size: 0;
+}
+
+label[for="id_name_of_animal"]:before {
+    content: "Name of Animal";
+    font-size: .875rem;
+}
+
+label[for="id_key_words"] {
+    font-size: 0;
+}
+
+label[for="id_key_words"]:before {
+    content: "Key Words";
+    font-size: .875rem;
+}
