@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponse
 
 from .models import *
@@ -14,7 +14,11 @@ def login(request):
 
 
 def userPage(request):
-    return render(request, 'accounts/client.html')
+
+    cases = Case.objects.all()
+
+    context = {'cases': cases}
+    return render(request, 'accounts/user.html', context)
 
 
 def createCase(request):

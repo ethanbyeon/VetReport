@@ -1,0 +1,45 @@
+
+{% extends 'global/base.html' %}
+{% load static %}
+
+{% block title %}Vet Report | Account {% endblock %}
+
+{% block custom_css %} <link rel="stylesheet" type="text/css" href="{% static '/css/accounts/user.css' %}"/> {% endblock %}
+
+{% block content %}
+
+    <main>
+        <section class="user-dashboard">
+            <div class="case-container">
+                <header class="case-header">
+                    <h1>Cases</h1>
+                    <button class="add-btn" aria-label="Add New Case">+</button>
+                </header>
+
+                <table class="case-table">
+                    <thead>
+                        <th>#</th>
+                        <th>Case Report</th>
+                        <th>Role</th>
+                        <th>Clinician</th>
+                        <th>Date Created</th>
+                        <th>Actions</th>
+                    </thead>
+                    <tbody>
+                        {% for case in cases %}
+                            <tr>
+                                <td>{{ case.id }}</td>
+                                <td>{{ case.name_of_animal }}</td>
+                                <td>{{ case.role }}</td>
+                                <td>{{ case.clinician }}</td>
+                                <td>{{ case.date_created }}</td>
+                                <td></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+{% endblock %}
