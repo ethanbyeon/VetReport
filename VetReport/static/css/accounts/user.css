@@ -7,7 +7,12 @@
     --mint: #5BBD93;
     --mango: #FB9927;
     --whitebkg: #EFF5F6;
+    --dangerRed: #FA4659;
+    --createGreen: #A3DE83;
+    --updateGreen: #2EB872;
 }
+
+/* GLOBAL */
 
 * {
     margin: 0px;
@@ -17,7 +22,10 @@
 
 body {
     font-family: var(--Raleway);
-    background: var(--mint);
+}
+
+a:link {
+    text-decoration: none;
 }
 
 .user-dashboard {
@@ -27,29 +35,16 @@ body {
     width: 80%;
     justify-content: center;
     align-items: center;
-    background: var(--whitebkg); 
 }
 
-/* Case Reports */
+/* CASE TABLE */
 
 .case-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-.case-container {
-    background: var(--mango);
-}
-
-.add-btn {
-    padding: 0.65rem 2rem;
-    margin: 0 0.6rem;
-    border-radius: 10px;
-    font-size: 16px;
-    color: white;
-    border-color: transparent;
-    background: black;
+    font-size: 25px;
+    color: black;
 }
 
 table {
@@ -59,24 +54,58 @@ table {
     overflow: hidden;
 }
 
-.case-table {
-    border-collapse: separate;
-    border-spacing: 0 15px;
-}
-
 .case-table thead {
     color: white;
     background: var(--mint);
 }
 
-.case-table th, td {
-    padding: 12px 12px;
-}
-
-.case-table tr {
-    border-radius: 10px;
+.case-table th {
+    padding: 12px 0;
 }
 
 .case-table td {
+    padding: 20px 15px;
+}
+
+.case-table {
     background: white;
+}
+
+.case-hover tbody tr:hover td {
+    color: white;
+    background: var(--mango);
+}
+
+.case-table tr:nth-of-type(even) {
+    background: #e9e9e9;
+}
+
+/* BUTTONS */
+
+.btn {
+    margin: 0 0.6rem;
+    border-radius: 5px;
+    color: white;
+    border-color: transparent;
+}
+
+.add-btn {
+    padding: 0.60rem 2rem;
+    margin-bottom: 1rem;
+    font-size: 25px;
+    background: var(--createGreen);
+}
+
+.update-btn {
+    padding: 0.65rem 1rem;
+    margin-bottom: 1rem;
+    font-size: 16px;
+    background: var(--updateGreen);
+}
+
+.delete-btn {
+    padding: 0.65rem 1rem;
+    margin-bottom: 1rem;
+    font-size: 16px;
+    background: var(--dangerRed);
 }

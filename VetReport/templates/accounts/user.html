@@ -13,10 +13,10 @@
             <div class="case-container">
                 <header class="case-header">
                     <h1>Cases</h1>
-                    <button class="add-btn" aria-label="Add New Case">+</button>
+                    <a href="{% url 'create_case' %}" class="btn add-btn" aria-label="Add New Case">+</a>
                 </header>
 
-                <table class="case-table">
+                <table class="case-table case-hover">
                     <thead>
                         <th>#</th>
                         <th>Case Report</th>
@@ -33,7 +33,10 @@
                                 <td>{{ case.role }}</td>
                                 <td>{{ case.clinician }}</td>
                                 <td>{{ case.date_created }}</td>
-                                <td></td>
+                                <td>
+                                    <a href="{% url 'update_case' case.id %}" class="btn update-btn">Update</a>
+                                    <a href="{% url 'delete_case' case.id %}" class="btn delete-btn">Delete</a>
+                                </td>
                             </tr>
                         {% endfor %}
                     </tbody>
